@@ -18,7 +18,7 @@ const Chat = ({ username, onLogout }) => {
 
   // 1. Only create the socket connection once per username
   useEffect(() => {
-    const socket = io('http://localhost:5000');
+    const socket = io('https://chat-application-0x1x.onrender.com');
     socketRef.current = socket;
 
     if (username && window._password) {
@@ -57,7 +57,7 @@ const Chat = ({ username, onLogout }) => {
 
   // 2. Fetch all users only once per username
   useEffect(() => {
-    fetch('http://localhost:5000/all-users')
+    fetch('https://chat-application-0x1x.onrender.com/all-users')
       .then(res => res.json())
       .then(data => setUsers(data.filter(u => u.username !== username)))
       .catch(err => console.error('Failed to fetch users:', err));

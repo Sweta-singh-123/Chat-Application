@@ -15,7 +15,7 @@ const Login = ({ onLogin }) => {
     setIsLoading(true);
     const endpoint = isSignup ? '/signup' : '/login';
     try {
-      const res = await fetch(`http://localhost:5000${endpoint}`, {
+      const res = await fetch(`https://chat-application-0x1x.onrender.com${endpoint}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: username.trim(), password: password.trim() })
